@@ -124,4 +124,87 @@
         <section id="simulateur" class="bg-gray-50 py-20 lg:py-28" x-data="priceSimulator()">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="p-8 rounded-lg" data
+                    <div class="p-8 rounded-lg" data-aos="fade-right">
+                        <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Calculez le tarif d'une course</h2>
+                        <p class="mt-4 text-lg text-gray-600">Obtenez une estimation immédiate pour une livraison unique. Découvrez combien vous pourriez économiser avec un abonnement !</p>
+                        <div class="mt-8 space-y-4">
+                            <div>
+                                <label for="depart" class="block text-sm font-medium text-gray-700">Point de départ</label>
+                                <select id="depart" x-model="startZone" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                                    <option value="plateau">Dakar-Plateau</option>
+                                    <option value="medina">Medina</option>
+                                    <option value="fass">Fass-Colobane-Gueule Tapée</option>
+                                    <option value="mermoz">Mermoz-Sacré-Coeur</option>
+                                    <option value="almadies">Almadies</option>
+                                    <option value="yoff">Yoff</option>
+                                    <option value="parcelles">Parcelles Assainies</option>
+                                    <option value="pikine">Pikine</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="arrivee" class="block text-sm font-medium text-gray-700">Point d'arrivée</label>
+                                <select id="arrivee" x-model="endZone" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                                    <option value="plateau">Dakar-Plateau</option>
+                                    <option value="medina">Medina</option>
+                                    <option value="fass">Fass-Colobane-Gueule Tapée</option>
+                                    <option value="mermoz">Mermoz-Sacré-Coeur</option>
+                                    <option value="almadies">Almadies</option>
+                                    <option value="yoff">Yoff</option>
+                                    <option value="parcelles">Parcelles Assainies</option>
+                                    <option value="pikine">Pikine</option>
+                                </select>
+                            </div>
+                            <button @click="calculatePrice()" class="w-full bg-[var(--huges-green)] text-white font-semibold py-3 px-4 rounded-lg hover:bg-[var(--huges-light-green)] transition-colors">Calculer mon tarif</button>
+                        </div>
+                    </div>
+                    <div class="text-center bg-green-100/50 p-10 rounded-2xl" data-aos="fade-left" data-aos-delay="200">
+                        <p class="text-lg text-gray-600">Tarif estimé pour cette course :</p>
+                        <div class="my-4 text-5xl font-extrabold text-[var(--huges-green)]" x-text="price ? price + ' FCFA' : '...'">...</div>
+                        <div x-show="price" x-transition class="text-gray-700">
+                          <p>Avec notre pack <strong class="font-bold">E-commerce Boost</strong>, cette livraison vous coûterait seulement <strong class="font-bold">1300 FCFA</strong>.</p>
+                          <a href="#formules" class="mt-4 inline-block text-[var(--huges-green)] font-bold hover:underline">Voir les abonnements →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function priceSimulator() {
+                    return {
+                        startZone: 'plateau',
+                        endZone: 'medina',
+                        price: null,
+                        prices: {
+                            plateau:  { plateau: 1500, medina: 1800, fass: 1800, mermoz: 2000, almadies: 2500, yoff: 2800, parcelles: 3000, pikine: 3500 },
+                            medina:   { plateau: 1800, medina: 1500, fass: 1500, mermoz: 1800, almadies: 2200, yoff: 2500, parcelles: 3000, pikine: 3500 },
+                            fass:     { plateau: 1800, medina: 1500, fass: 1500, mermoz: 1800, almadies: 2200, yoff: 2500, parcelles: 3000, pikine: 3500 },
+                            mermoz:   { plateau: 2000, medina: 1800, fass: 1800, mermoz: 1500, almadies: 1800, yoff: 2000, parcelles: 2500, pikine: 3000 },
+                            almadies: { plateau: 2500, medina: 2200, fass: 2200, mermoz: 1800, almadies: 1500, yoff: 1800, parcelles: 3000, pikine: 4000 },
+                            yoff:     { plateau: 2800, medina: 2500, fass: 2500, mermoz: 2000, almadies: 1800, yoff: 1500, parcelles: 2500, pikine: 3500 },
+                            parcelles:{ plateau: 3000, medina: 3000, fass: 3000, mermoz: 2500, almadies: 3000, yoff: 2500, parcelles: 1500, pikine: 2000 },
+                            pikine:   { plateau: 3500, medina: 3500, fass: 3500, mermoz: 3000, almadies: 4000, yoff: 3500, parcelles: 2000, pikine: 1500 },
+                        },
+                        calculatePrice() {
+                            this.price = this.prices[this.startZone][this.endZone];
+                        }
+                    }
+                }
+            </script>
+        </section>
+      </main>
+
+      <footer class="bg-gray-900 text-white">
+        <!-- ... (Le footer reste identique) ... -->
+      </footer>
+    </div>
+    
+    <!-- ... (Le modal reste identique) ... -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+    </script>
+</body>
+</html>
