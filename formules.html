@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nos Formules — Huges Service</title>
+    <meta name="description" content="Découvrez nos abonnements de livraison flexibles et économiques pour tous les besoins à Dakar." />
+    <meta name="theme-color" content="#386641" />
+    <!-- AOS Animation Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+      :root {
+        --huges-green: #386641;
+        --huges-orange: #F59E0B;
+        --huges-light-green: #6A994E;
+        --huges-light-gray: #F7F7F7;
+      }
+    </style>
+</head>
+
+<body class="antialiased bg-white text-gray-800 font-sans" x-data="{ mobileMenuOpen: false, legalModalOpen: false }">
+    <div class="min-h-screen flex flex-col">
+
+      <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-lg border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="relative flex items-center justify-between h-16">
+            <a href="index.html" class="flex items-center gap-3" aria-label="Huges Service - Accueil">
+              <img src="https://i.postimg.cc/nz5CJRy6/Chat-GPT-Image-27-juil-2025-05-17-01.png" alt="Logo Huges Service" class="h-12 w-auto" />
+              <div>
+                <div class="text-lg font-bold text-gray-900">Huges Service</div>
+                <div class="text-xs text-gray-500 -mt-1">Livraison moto — Dakar</div>
+              </div>
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
+              <a href="index.html" class="hover:text-[var(--huges-green)] transition-colors">Accueil</a>
+              <a href="formules.html" class="text-[var(--huges-green)] transition-colors">Formules</a>
+              <a href="a-propos.html" class="hover:text-[var(--huges-green)] transition-colors">À Propos</a>
+              <a href="contact.html" class="hover:text-[var(--huges-green)] transition-colors">Contact</a>
+              <a href="formules.html" class="ml-4 inline-block bg-[var(--huges-orange)] hover:bg-amber-500 text-white px-5 py-2.5 rounded-lg shadow-sm font-semibold transition-transform hover:scale-105">
+                Voir les abonnements
+              </a>
+            </nav>
+            <div class="flex md:hidden">
+              <button @click="mobileMenuOpen = !mobileMenuOpen" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none">
+                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                  <path :class="{'hidden': mobileMenuOpen, 'inline-flex': !mobileMenuOpen }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                  <path :class="{'hidden': !mobileMenuOpen, 'inline-flex': mobileMenuOpen }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div x-show="mobileMenuOpen" x-transition class="md:hidden">
+          <nav class="px-2 pt-2 pb-4 space-y-1 sm:px-3 text-center">
+            <a href="index.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Accueil</a>
+            <a href="formules.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Formules</a>
+            <a href="a-propos.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">À Propos</a>
+            <a href="contact.html" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Contact</a>
+            <a href="formules.html" @click="mobileMenuOpen = false" class="mt-4 block w-full bg-[var(--huges-orange)] hover:bg-amber-500 text-white px-5 py-2.5 rounded-lg shadow-sm font-semibold">Voir les abonnements</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section id="formules" class="bg-[var(--huges-light-gray)] py-20 lg:py-28">
+          <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center" data-aos="fade-down">
+              <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Des formules adaptées à chaque besoin</h2>
+              <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Que vous soyez un particulier, un freelance ou une grande entreprise, nous avons l'abonnement qu'il vous faut.</p>
+            </div>
+            <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
+              <article class="p-6 rounded-xl bg-white border border-gray-200 flex flex-col" data-aos="zoom-in-up" data-aos-delay="100">
+                <h4 class="font-bold text-lg text-[var(--huges-green)]">Starter</h4>
+                <p class="text-sm text-gray-500 mt-1">Particuliers & Petits besoins</p>
+                <div class="my-4 text-3xl font-extrabold text-gray-900">14 000 <span class="text-base font-medium text-gray-500">FCFA/mois</span></div>
+                <ul class="text-sm space-y-2 text-gray-700 flex-grow">
+                  <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>10 livraisons incluses (soit 1400 FCFA/course)</li>
+                  <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Max. 2 livraisons / jour</li>
+                  <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Suivi en temps réel</li>
+                </ul>
+                <a href="https://wa.me/221764669165?text=Bonjour,%20je%20suis%20intéressé(e)%20par%20le%20pack%20Starter." class="mt-6 text-center w-full inline-block bg-gray-200 text-gray-800 font-semibold px-4 py-3 rounded-lg hover:bg-gray-300 transition-colors">Choisir ce pack</a>
+              </article>
+              <article class="p-6 rounded-xl bg-white border border-gray-200 flex flex-col" data-aos="zoom-in-up" data-aos-delay="200">
+                <h4 class="font-bold text-lg text-[var(--huges-green)]">Pro Mobile</h4>
+                <p class="text-sm text-gray-500 mt-1">Freelances & Indépendants</p>
+                <div class="my-4 text-3xl font-extrabold text-gray-900">33 500 <span class="text-base font-medium text-gray-500">FCFA/mois</span></div>
+                <ul class="text-sm space-y-2 text-gray-700 flex-grow">
+                  <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>25 livraisons incluses (soit 1340 FCFA/course)</li>
+                   <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Max. 6 livraisons / semaine</li>
+                  <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Priorité sur le planning</li>
+                </ul>
+                <a href="https://wa.me/221764669165?text=Bonjour,%20je%20suis%20intéressé(e)%20par%20le%20pack%20Pro%20Mobile." class="mt-6 text-center w-full inline-block bg-gray-200 text-gray-800 font-semibold px-4 py-3 rounded-lg hover:bg-gray-300 transition-colors">Choisir ce pack</a>
+              </article>
+              <article class="relative p-6 rounded-xl bg-[var(--huges-green)] text-white shadow-lg flex flex-col ring-2 ring-amber-400" data-aos="zoom-in-up" data-aos-delay="300">
+                <div class="absolute -top-4 right-4 bg-[var(--huges-orange)] text-white text-xs font-bold px-3 py-1 rounded-full">LE PLUS POPULAIRE</div>
+                <h4 class="font-bold text-lg">E-commerce Boost</h4>
+                <p class="text-sm text-green-200 mt-1">Boutiques en ligne</p>
+                <div class="my-4 text-3xl font-extrabold">65 000 <span class="text-base font-medium text-green-200">FCFA/mois</span></div>
+                <ul class="text-sm space-y-2 flex-grow">
+                  <li class="flex items-start gap-2"><svg class="w-4 h-4 text-amber-300 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>50 livraisons incluses (soit 1300 FCFA/course)</li>
+                  <li class="flex items-start gap-2"><svg class="w-4 h-4 text-amber-300 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Aucune limite journalière</li>
+                  <li class="flex items-start gap-2"><svg class="w-4 h-4 text-amber-300 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Facturation mensuelle dédiée</li>
+                </ul>
+                <a href="https://wa.me/221764669165?text=Bonjour,%20je%20suis%20intéressé(e)%20par%20le%20pack%20E-commerce%20Boost." class="mt-6 text-center w-full inline-block bg-[var(--huges-orange)] text-white font-semibold px-4 py-3 rounded-lg hover:bg-amber-500 transition-transform hover:scale-105">Je m'abonne</a>
+              </article>
+              <article class="p-6 rounded-xl bg-white border border-gray-200 flex flex-col" data-aos="zoom-in-up" data-aos-delay="400">
+                <h4 class="font-bold text-lg text-[var(--huges-green)]">Resto Pro</h4>
+                <p class="text-sm text-gray-500 mt-1">Restaurants & Dark Kitchens</p>
+                <div class="my-4 text-3xl font-extrabold text-gray-900">120 000 <span class="text-base font-medium text-gray-500">FCFA/mois</span></div>
+                <ul class="text-sm space-y-2 text-gray-700 flex-grow">
+                  <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>100 livraisons incluses (soit 1200 FCFA/course)</li>
+                  <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Aucune limite journalière</li>
+                  <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Priorité sur les créneaux repas</li>
+                </ul>
+                <a href="https://wa.me/221764669165?text=Bonjour,%20je%20suis%20intéressé(e)%20par%20le%20pack%20Resto%20Pro." class="mt-6 text-center w-full inline-block bg-gray-200 text-gray-800 font-semibold px-4 py-3 rounded-lg hover:bg-gray-300 transition-colors">Choisir ce pack</a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="simulateur" class="bg-white py-20 lg:py-28" x-data="priceSimulator()">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="p-8 rounded-lg" data-aos="fade-right">
+                        <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Calculez le tarif d'une course</h2>
+                        <p class="mt-4 text-lg text-gray-600">Obtenez une estimation immédiate pour une livraison unique. Découvrez combien vous pourriez économiser avec un abonnement !</p>
+                        <div class="mt-8 space-y-4">
+                            <div>
+                                <label for="depart" class="block text-sm font-medium text-gray-700">Point de départ</label>
+                                <select id="depart" x-model="startZone" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                                    <option value="plateau">Dakar-Plateau</option>
+                                    <option value="medina">Medina</option>
+                                    <option value="fass">Fass-Colobane-Gueule Tapée</option>
+                                    <option value="mermoz">Mermoz-Sacré-Coeur</option>
+                                    <option value="almadies">Almadies</option>
+                                    <option value="yoff">Yoff</option>
+                                    <option value="parcelles">Parcelles Assainies</option>
+                                    <option value="pikine">Pikine</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="arrivee" class="block text-sm font-medium text-gray-700">Point d'arrivée</label>
+                                <select id="arrivee" x-model="endZone" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                                    <option value="plateau">Dakar-Plateau</option>
+                                    <option value="medina">Medina</option>
+                                    <option value="fass">Fass-Colobane-Gueule Tapée</option>
+                                    <option value="mermoz">Mermoz-Sacré-Coeur</option>
+                                    <option value="almadies">Almadies</option>
+                                    <option value="yoff">Yoff</option>
+                                    <option value="parcelles">Parcelles Assainies</option>
+                                    <option value="pikine">Pikine</option>
+                                </select>
+                            </div>
+                            <button @click="calculatePrice()" class="w-full bg-[var(--huges-green)] text-white font-semibold py-3 px-4 rounded-lg hover:bg-[var(--huges-light-green)] transition-colors">Calculer mon tarif</button>
+                        </div>
+                    </div>
+                    <div class="text-center bg-green-50 p-10 rounded-2xl" data-aos="fade-left" data-aos-delay="200">
+                        <p class="text-lg text-gray-600">Tarif estimé pour cette course :</p>
+                        <div class="my-4 text-5xl font-extrabold text-[var(--huges-green)]" x-text="price ? price + ' FCFA' : '...'">...</div>
+                        <div x-show="price" x-transition class="text-gray-700">
+                          <p>Avec notre pack <strong class="font-bold">E-commerce Boost</strong>, cette livraison vous coûterait seulement <strong class="font-bold">1300 FCFA</strong>.</p>
+                          <a href="#formules" class="mt-4 inline-block text-[var(--huges-green)] font-bold hover:underline">Voir les abonnements →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function priceSimulator() {
+                    return {
+                        startZone: 'plateau',
+                        endZone: 'medina',
+                        price: null,
+                        prices: {
+                            plateau:  { plateau: 1500, medina: 1800, fass: 1800, mermoz: 2000, almadies: 2500, yoff: 2800, parcelles: 3000, pikine: 3500 },
+                            medina:   { plateau: 1800, medina: 1500, fass: 1500, mermoz: 1800, almadies: 2200, yoff: 2500, parcelles: 3000, pikine: 3500 },
+                            fass:     { plateau: 1800, medina: 1500, fass: 1500, mermoz: 1800, almadies: 2200, yoff: 2500, parcelles: 3000, pikine: 3500 },
+                            mermoz:   { plateau: 2000, medina: 1800, fass: 1800, mermoz: 1500, almadies: 1800, yoff: 2000, parcelles: 2500, pikine: 3000 },
+                            almadies: { plateau: 2500, medina: 2200, fass: 2200, mermoz: 1800, almadies: 1500, yoff: 1800, parcelles: 3000, pikine: 4000 },
+                            yoff:     { plateau: 2800, medina: 2500, fass: 2500, mermoz: 2000, almadies: 1800, yoff: 1500, parcelles: 2500, pikine: 3500 },
+                            parcelles:{ plateau: 3000, medina: 3000, fass: 3000, mermoz: 2500, almadies: 3000, yoff: 2500, parcelles: 1500, pikine: 2000 },
+                            pikine:   { plateau: 3500, medina: 3500, fass: 3500, mermoz: 3000, almadies: 4000, yoff: 3500, parcelles: 2000, pikine: 1500 },
+                        },
+                        calculatePrice() {
+                            this.price = this.prices[this.startZone][this.endZone];
+                        }
+                    }
+                }
+            </script>
+        </section>
+      </main>
+
+      <footer class="bg-gray-900 text-white">
+        <!-- Footer content is the same as index.html -->
+        <div class="max-w-7xl mx-auto px-6 py-12">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="md:col-span-2">
+              <h3 class="font-bold text-lg">Huges Service</h3>
+              <p class="mt-2 text-sm text-gray-400 max-w-sm">La solution de livraison par abonnement qui accélère votre business à Dakar. Fiabilité, rapidité et économies garanties.</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-200">Navigation</h4>
+              <ul class="mt-4 space-y-2 text-sm">
+                <li><a href="formules.html" class="text-gray-400 hover:text-white">Formules</a></li>
+                <li><a href="a-propos.html" class="text-gray-400 hover:text-white">À Propos</a></li>
+                <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-200">Contact & Légal</h4>
+              <ul class="mt-4 space-y-2 text-sm">
+                <li><a href="https://wa.me/221764669165" target="_blank" class="text-gray-400 hover:text-white">WhatsApp : +221 76 466 91 65</a></li>
+                <li><span class="text-gray-400">Email : contact@huges-service.com</span></li>
+                <li class="mt-2"><button @click="legalModalOpen = true" class="text-gray-400 hover:text-white text-left">Mentions légales & CGV</button></li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-12 border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
+            <p>&copy; 2025 Huges Service. Tous droits réservés.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <!-- Modal content is the same as index.html -->
+    <div x-show="legalModalOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50" style="display: none;">
+      <div @click.away="legalModalOpen = false" class="relative bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8">
+        <button @click="legalModalOpen = false" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Mentions Légales & CGV</h2>
+        <div class="prose max-w-none text-gray-600">
+            <p class="font-bold">1. Informations sur l'éditeur</p>
+            <p>Ce site est la propriété de Huges Service, entreprise enregistrée à Dakar, Sénégal. Adresse : 123 Avenue de l'Indépendance, Dakar. Email : contact@huges-service.com. Téléphone : +221 76 466 91 65.</p>
+            <p class="font-bold">2. Conditions Générales de Vente (CGV)</p>
+            <p>Les présentes conditions régissent les abonnements aux services de livraison de Huges Service. L'abonnement est mensuel, payable d'avance par mobile money ou virement. Les livraisons incluses dans le forfait doivent être utilisées dans le mois en cours et ne sont pas reportables. Toute livraison supplémentaire sera facturée au tarif préférentiel abonné.</p>
+            <p class="font-bold">3. Responsabilité</p>
+            <p>Huges Service s'engage à mettre tout en œuvre pour assurer une livraison rapide et sécurisée. La responsabilité de Huges Service ne saurait être engagée en cas de force majeure (conditions météorologiques extrêmes, manifestations, etc.). Les colis doivent être correctement emballés par l'expéditeur.</p>
+            <p class="font-bold">4. Données personnelles</p>
+            <p>Les informations collectées sont nécessaires à la gestion de votre abonnement. Conformément à la législation en vigueur, vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+    </script>
+</body>
+</html>
